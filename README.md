@@ -6,7 +6,7 @@
 ```
 This demo is written in Cython and C in order to achieve 120 FPS for a large quantity of 
 buletts to be display at once.
-1) Cynthonize the project using the command below
+1) Cynthonize the project using the command below (you need to be in the folder where setup_Project.py is located)
 "C:>python setup_Project.py build_ext --inplace"
 
 2) Run the program BulletHell.py to play the demo
