@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<class>
+    <category name = "BOSS">
+
+        <weapon name              ="G5V200"
+                type              ="CORVETTE"
+                image             ="G5V200_ANIMATION"
+                sprite_orientation="0"
+                sprite_rotozoom   ="FX074_ROTATE_BUFFER"
+                shadow            ="G5V200_SHADOW_ROTATION_BUFFER"
+                range             ='SCREENRECT.h'
+                velocity          ='12'
+                damage            ='30'
+                reload_countdown  ='1500'
+                reloading_time    ='1500'>
+        </weapon>
+
+        <weapon name              ="LASER_FX086"
+                type              ="LASER"
+                image             ="LASER_FX086"
+                sprite_orientation="0"
+                sprite_rotozoom   ="FX086_ROTATE_BUFFER"
+                range             ='SCREENRECT.h'
+                velocity          ='12'
+                damage            ='38'
+                reload_countdown  ='1500'
+                reloading_time    ='1500'>
+        </weapon>
+
+    </category>
+
+</class>
