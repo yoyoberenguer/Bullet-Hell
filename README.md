@@ -1,6 +1,6 @@
 # Bullet-Hell
 
-## Bullet hell animaion
+## Bullet hell demo
 
 ### PROJECT:
 ```
@@ -29,5 +29,6 @@ The folder Assets must be in the main directory (same folder than BuleltHell.py)
   refer to external documentation or tutorial in order to setup this process.
   e.g https://devblogs.microsoft.com/python/unable-to-find-vcvarsall-bat/
 ```
-![alt text](https://github.com/yoyoberenguer/Bullet-Hell/edit/master/screenshot1655.png)
+![alt text](https://github.com/yoyoberenguer/Bullet-Hell/blob/master/screenshot1655.png)
+
 
