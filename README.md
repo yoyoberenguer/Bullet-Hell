@@ -33,3 +33,4 @@ The folder Assets must be in the main directory (same folder than BuleltHell.py)
 ![alt text](https://github.com/yoyoberenguer/Bullet-Hell/blob/master/screenshot1655.png)
 
 
+![alt text](https://github.com/yoyoberenguer/Bullet-Hell/blob/master/FPS.png)
