@@ -17,6 +17,7 @@ The folder Assets must be in the main directory (same folder than BuleltHell.py)
 
 ### REQUIREMENT:
 ```
+- opencv (pip install opencv-python)
 - python > 3.0
 - numpy arrays
 - pygame with SDL version 1.2 (SDL version 2 untested)
