@@ -335,6 +335,29 @@ cdef inline int get_angle(int obj1_x, int obj1_y, int obj2_x, int obj2_y)nogil:
         return -<int>((RAD_TO_DEG * atan2(dy, dx)) % 360)
 
 
+#
+# @cython.boundscheck(False)
+# @cython.wraparound(False)
+# @cython.nonecheck(False)
+# @cython.cdivision(True)
+# cdef class EnemyBossFeatures(Sprite):
+#     """
+#     ENEMY BOSS OPTIONS
+#     """
+#     def __init__(self, group_, dict features_):
+#         """
+#         :param group_: Sprite Group(s)
+#         :param features_: Enemy Boss settings (see XML file for more details)
+#         """
+#         Sprite.__init__(self, group_)
+#
+#         self.name               = features_['name']
+#         self.type               = features_['type']
+#         self.sprite_orientation = features_['sprite_orientation']
+#         self.sprite_rotozoom    = features_['sprite_rotozoom']
+#         self.shadow             = features_['shadow']
+
+
 @cython.boundscheck(False)
 @cython.wraparound(False)
 @cython.nonecheck(False)
@@ -362,7 +385,7 @@ cdef class EnemyBoss(Sprite):
         :param containers_: Sprite group(s) to use
         :param pos_x      : integer; x coordinates
         :param pos_y      : integer; y coordinates
-        :param image_     : pygame.Surface; Surface/animations
+        :param image_     : Surface; Surface/animations
         :param timing_    : float; FPS
         :param layer_     : integer; Layer to use
         :param _blend     : integer; additive mode
@@ -401,7 +424,7 @@ cdef class EnemyBoss(Sprite):
         # TO THE ORIGINAL IMAGE ORIENTATION
         # 0 DEGREES, SPACESHIP IMAGE IS ORIENTED
         # TOWARD THE RIGHT
-        self.sprite_orientation = 0
+        # self.sprite_orientation = 0
 
         # ANGLE IN DEGREES CORRESPONDING
         # TO THE DIFFERENCE BETWEEN ORIGINAL (
@@ -425,9 +448,12 @@ cdef class EnemyBoss(Sprite):
         self.bullet_count_down       = \
             <object>PyDict_GetItem(weapon2_,'reload_countdown')
 
+        # TIME IN BETWEEN PATTERNS 10 secs
+        # PATTERN IS A LIST CONTAINING DIFFERENT ANGLE IN BETWEEN SHOTS
         self.pattern_countdown       = 10e3 # 10 secs
         self.pattern_index           = 0
 
+        # LOAD FIRST PATTERN
         self.bullet_hell_angle = PATTERNS[self.pattern_index]
         self.shooting_angle = 0
 
@@ -438,7 +464,7 @@ cdef class EnemyBoss(Sprite):
             self.timer = 0.0
 
         self.shadow         = G5V200_SHADOW
-        self.quake_range    = arange(0.0, 1.0, 0.1)
+        self.quake_range    = OSCILLATIONS
         self.quake_length   = len(self.quake_range) - 1
         self.quake_index    = 0
         self.quake          = False

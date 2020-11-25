@@ -18,11 +18,15 @@ try:
     cimport cython
     from cython.parallel cimport prange
 except ImportError:
-    print("\n<cython> library is missing on your system."
+    raise ImportError("\n<cython> library is missing on your system."
           "\nTry: \n   C:\\pip install cython on a window command prompt.")
-    raise SystemExit
 
-import numpy
+try:
+    import numpy
+except ImportError:
+    raise ImportError("\n<Numpy> library is missing on your system."
+          "\nTry: \n   C:\\pip install numpy on a window command prompt.")
+
 from numpy import empty, uint8
 from libc.stdlib cimport srand, rand, RAND_MAX, qsort, malloc, free, abs
 
@@ -440,6 +444,7 @@ cdef hue_surface_32c(surface_: Surface, float shift_):
 
 
 import colorsys
+
 def shift_hue(r, g, b, shift_):
     """ hue shifting algorithm
         Transform an RGB color into its hsv equivalent and rotate color with shift_ parameter

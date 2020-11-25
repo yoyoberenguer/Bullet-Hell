@@ -36,7 +36,7 @@ from BLOOM cimport bloom_effect_buffer24_c, bloom_effect_buffer32_c
 from numpy import array
 
 
-BACKGROUND   = pygame.image.load('Assets\\A2.png').convert(32, RLEACCEL)
+BACKGROUND   = pygame.image.load('Assets\\A5.png').convert(32, RLEACCEL)
 
 cdef int w, h
 COBRA        = pygame.image.load('Assets\\SpaceShip.png').convert_alpha()

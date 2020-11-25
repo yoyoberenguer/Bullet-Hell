@@ -349,83 +349,83 @@ inline struct rgb struct_hsv_to_rgb(double h, double s, double v)
 }
 
 
-
-
-int main ()
-{
-double *ar;
-double *ar1;
-int i, j, k;
-double r, g, b;
-double h, s, v;
-
-int n = 1000000;
-double *ptr;
-clock_t begin = clock();
-struct hsv hsv_;
-struct rgb rgb_;
-
-/* here, do your time-consuming job */
-for (i=0; i<=n; ++i){
-    ptr = rgb_to_hsv(25.0/255.0, 60.0/255.0, 128.0/255.0);
-    printf("\nHSV1 : %f %f %f ", ptr[0], ptr[1], ptr[2]);
-    hsv_ = struct_rgb_to_hsv(25.0/255.0, 60.0/255.0, 128.0/255.0);
-    printf("\nHSV2 : %f %f %f ", hsv_.h, hsv_.s, hsv_.v);
-    rgb_ = struct_hsv_to_rgb(hsv_.h, hsv_.s, hsv_.v);
-    printf("\nHSV3 : %f %f %f ", rgb_.r, rgb_.g, rgb_.b);
-
-}
-
-clock_t end = clock();
-double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
-printf("\ntotal time %f :", time_spent);
-
-printf("\nTesting algorithm(s).");
-n = 0;
-for (i=0; i<256; i++){
-    for (j=0; j<256; j++){
-        for (k=0; k<256; k++){
-            ar = rgb_to_hsv((double)i/255, (double)j/255, (double)k/255);
-            h=ar[0];
-            s=ar[1];
-            v=ar[2];
-	        free(ar);
-            ar1 = hsv_to_rgb(h, s, v);
-            r = round(ar1[0] * 255.0);
-            g = round(ar1[1] * 255.0);
-            b = round(ar1[2] * 255.0);
-   	        free(ar1);
-            // printf("\n\nRGB VALUES:R:%i G:%i B:%i ", i, j, k);
-            // printf("\nRGB VALUES:R:%f G:%f B:%f ", r, g, b);
-            // printf("\n %f, %f, %f ", h, s, v);
-
-            if (abs(i - r) > 0.1) {
-                printf("\n\nRGB VALUES:R:%i G:%i B:%i ", i, j, k);
-                    printf("\nRGB VALUES:R:%f G:%f B:%f ", r, g, b);
-                printf("\n %f, %f, %f ", h, s, v);
-                        n+=1;
-                return -1;
-            }
-            if (abs(j - g) > 0.1){
-                printf("\n\nRGB VALUES:R:%i G:%i B:%i ", i, j, k);
-                    printf("\nRGB VALUES:R:%f G:%f B:%f ", r, g, b);
-                printf("\n %f, %f, %f ", h, s, v);
-                        n+=1;
-                return -1;
-            }
-
-            if (abs(k - b) > 0.1){
-                printf("\n\nRGB VALUES:R:%i G:%i B:%i ", i, j, k);
-                printf("\nRGB VALUES:R:%f G:%f B:%f ", r, g, b);
-                printf("\n %f, %f, %f ", h, s, v);
-                n+=1;
-		        return -1;
-
-            }
-        }
-    }
-}
-printf("\nError(s) found. %i ", n);
-
-return 0;
-}
+//
+//
+//int main ()
+//{
+//double *ar;
+//double *ar1;
+//int i, j, k;
+//double r, g, b;
+//double h, s, v;
+//
+//int n = 1000000;
+//double *ptr;
+//clock_t begin = clock();
+//struct hsv hsv_;
+//struct rgb rgb_;
+//
+///* here, do your time-consuming job */
+//for (i=0; i<=n; ++i){
+//    ptr = rgb_to_hsv(25.0/255.0, 60.0/255.0, 128.0/255.0);
+//    printf("\nHSV1 : %f %f %f ", ptr[0], ptr[1], ptr[2]);
+//    hsv_ = struct_rgb_to_hsv(25.0/255.0, 60.0/255.0, 128.0/255.0);
+//    printf("\nHSV2 : %f %f %f ", hsv_.h, hsv_.s, hsv_.v);
+//    rgb_ = struct_hsv_to_rgb(hsv_.h, hsv_.s, hsv_.v);
+//    printf("\nHSV3 : %f %f %f ", rgb_.r, rgb_.g, rgb_.b);
+//
+//}
+//
+//clock_t end = clock();
+//double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+//printf("\ntotal time %f :", time_spent);
+//
+//printf("\nTesting algorithm(s).");
+//n = 0;
+//for (i=0; i<256; i++){
+//    for (j=0; j<256; j++){
+//        for (k=0; k<256; k++){
+//            ar = rgb_to_hsv((double)i/255, (double)j/255, (double)k/255);
+//            h=ar[0];
+//            s=ar[1];
+//            v=ar[2];
+//	        free(ar);
+//            ar1 = hsv_to_rgb(h, s, v);
+//            r = round(ar1[0] * 255.0);
+//            g = round(ar1[1] * 255.0);
+//            b = round(ar1[2] * 255.0);
+//   	        free(ar1);
+//            // printf("\n\nRGB VALUES:R:%i G:%i B:%i ", i, j, k);
+//            // printf("\nRGB VALUES:R:%f G:%f B:%f ", r, g, b);
+//            // printf("\n %f, %f, %f ", h, s, v);
+//
+//            if (abs(i - r) > 0.1) {
+//                printf("\n\nRGB VALUES:R:%i G:%i B:%i ", i, j, k);
+//                    printf("\nRGB VALUES:R:%f G:%f B:%f ", r, g, b);
+//                printf("\n %f, %f, %f ", h, s, v);
+//                        n+=1;
+//                return -1;
+//            }
+//            if (abs(j - g) > 0.1){
+//                printf("\n\nRGB VALUES:R:%i G:%i B:%i ", i, j, k);
+//                    printf("\nRGB VALUES:R:%f G:%f B:%f ", r, g, b);
+//                printf("\n %f, %f, %f ", h, s, v);
+//                        n+=1;
+//                return -1;
+//            }
+//
+//            if (abs(k - b) > 0.1){
+//                printf("\n\nRGB VALUES:R:%i G:%i B:%i ", i, j, k);
+//                printf("\nRGB VALUES:R:%f G:%f B:%f ", r, g, b);
+//                printf("\n %f, %f, %f ", h, s, v);
+//                n+=1;
+//		        return -1;
+//
+//            }
+//        }
+//    }
+//}
+//printf("\nError(s) found. %i ", n);
+//
+//return 0;
+//}

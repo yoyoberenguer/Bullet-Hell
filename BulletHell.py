@@ -80,14 +80,13 @@ def xml_parsing(xml_features):
     return weapon_features
 
 
-
-
 if __name__ == '__main__':
 
-
-
     pygame.init()
-    pygame.mixer.pre_init(44100, 16, 2, 4095)
+    if int(pygame.version.ver[0]) >= 2:
+        pygame.mixer.init(44100, -16, 1, 4095, allowedchanges=0)
+    else:
+        pygame.mixer.init(44100, -16, 1, 4095)
 
     GL.SC_explosion        = SoundControl(GL.SCREENRECT, 20)
     clock                  = pygame.time.Clock()
@@ -157,6 +156,8 @@ if __name__ == '__main__':
         if keys[pygame.K_DOWN]:
             GL.player.rect.centery += 4
 
+        if keys[pygame.K_F8]:
+            pygame.image.save(SCREEN, "screenshot" + str(GL.FRAME) + ".png")
         if keys[pygame.K_SPACE]:
             if not enemy.alive():
                 GL.FRAME = 0
