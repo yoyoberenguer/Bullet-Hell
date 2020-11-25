@@ -40,3 +40,4 @@ pip install opencv-python numpy==1.19.3 pygame cython matplotlib
 
 
 ![alt text](https://github.com/yoyoberenguer/Bullet-Hell/blob/master/FPS.png)
+
