@@ -1025,7 +1025,8 @@ cdef class LayeredDirty(LayeredUpdates):
     New in pygame 1.8.0
 
     """
-    cdef public bint _clip, _use_update
+    cdef public bint _use_update
+    cdef object _clip
     cdef public float _time_threshold
     cdef public object _bgd
 
