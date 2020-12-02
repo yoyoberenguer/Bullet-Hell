@@ -8,6 +8,15 @@ Compatible with PYGAME 2.0
 Install the program using Setup_BulletHell.exe
 ```
 
+## KEYS
+```
+up    : spaceship move up
+down  : move down 
+left  : move left 
+right : move right 
+esc   : quit
+```
+
 ### PROJECT:
 ```
 This demo is written in Cython and C in order to achieve 350-400 FPS for a large quantity of 
