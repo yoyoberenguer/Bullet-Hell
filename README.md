@@ -3,6 +3,11 @@
 ## Really fast Bullet hell demo > 350 FPS 
 Compatible with PYGAME 2.0 
 
+## New release 
+```
+Install the program using Setup_BulletHell.exe
+```
+
 ### PROJECT:
 ```
 This demo is written in Cython and C in order to achieve 350-400 FPS for a large quantity of 
