@@ -1,5 +1,9 @@
 # Bullet-Hell
 
+<p align="center">
+    <img src="https://github.com/yoyoberenguer/Bullet-Hell/blob/main/bombing.gif?raw=true">
+</p>
+
 ## Really fast Bullet hell demo > 350 FPS 
 Compatible with PYGAME 2.0 
 
