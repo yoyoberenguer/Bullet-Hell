@@ -1,7 +1,7 @@
 # Bullet-Hell
 
 <p align="center">
-    <img src="https://github.com/yoyoberenguer/Bullet-Hell/blob/main/bombing.gif?raw=true">
+    <img src="https://github.com/yoyoberenguer/Bullet-Hell/blob/master/bullethell.gif?raw=true">
 </p>
 
 ## Really fast Bullet hell demo > 350 FPS 
